@@ -1,0 +1,15 @@
+.contenedor {
+    border: 2px dashed gray;
+padding: 20px;
+border-radius: 25px;
+background-color: gainsboro;
+color: rebeccapurple;
+font-family: -apple-system;
+width: 600px;
+margin: auto;
+}
+
+
+body {
+        background: rebeccapurple;
+}

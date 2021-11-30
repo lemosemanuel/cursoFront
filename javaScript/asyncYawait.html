@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feach</title>
+</head>
+<body>
+    <b>Nombre del post: </b><span id="txtNombrePost"></span><br>
+    <b> Esta completo ? </b><span id="txtCompleto"></span>
+    <script>
+
+        async function cargarUrl(url){
+            let respuest= await fetch(url);
+            return respuest.json();
+        }
+        async function cargargarJson(){
+            // fetch('https://jsonplaceholder.typicode.com/todos/1')
+            // .then(data => data.json())
+            // .then(jsonCargado); //la reenvio a json
+
+
+            // let resultado = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+            // let respuesta= await resultado.json();
+            // alert(respuesta);
+            // console.log(respuesta);
+            // jsonCargado(respuesta)
+
+            let json= await cargargarJson('https://jsonplaceholder.typicode.com/todos/1');
+
+            
+        }
+
+        function jsonCargado(json){
+            let spanNombre=document.getElementById("txtNombrePost");
+            spanNombre.innerHTML=json.title;
+            let textoCompleto = document.getElementById("txtCompleto");
+            textoCompleto.innerHTML = json.completed ? "esta completo":"no esta completo";
+            // if (json.completed){
+            //     textoCompleto.innerHTML= "esta completo";
+            // }else{
+            //     textoCompleto.innerHTML= "esta incompleto";
+            // }
+            
+        }
+
+        cargargarJson();
+    </script>
+</body>
+</html>

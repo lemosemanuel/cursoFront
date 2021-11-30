@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timers</title>
+</head>
+<body>
+    <script>
+        // var mostrarMensaje=function mostrarMensaje(){
+        //     alert("hola que tal");
+
+        // }
+
+        mostrarMensaje= ()=>{
+            alert("hola que tal");
+
+        }
+
+        // setTimeout(mostrarMensaje,3000);
+
+        setTimeout(()=>{alert("hola que tal")},3000);
+
+
+        // si quiero que se ejecute cada cierto tiempo
+        var time = setInterval(()=>{alert("esto se va a correr cada 1 seg")},1000);
+        alert(time);
+
+        // clearInterval(timer);
+        setTimeout(()=>{clearInterval(timer)},1000);
+
+
+
+
+        // function mostrarMensaje(){
+        //     alert("hola que tal")
+
+        // }
+    </script>
+    
+</body>
+</html>

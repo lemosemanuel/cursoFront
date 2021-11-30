@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <label>Nombre</label><input type="text" id="txtNombre"><br>
+    <label>Apellido</label><input type="text" id="txtApellido"><br>
+    <label>telefono</label><input type="text" id="txtTelefono"><br>
+    <label>Email</label><input type="text" id="txtEmail"><br>
+    <button id="btnAgregar">Agregar</button><br>
+
+    <div id="listado">
+
+    </div>
+
+    <script>
+        window.onload= iniciar;
+        personas=[];
+        function iniciar(){
+            var btnAgregar= document.getElementById("btnAgregar");
+            btnAgregar.addEventListener("click",clickBtnAgregar)
+
+        }
+        function clickBtnAgregar(){
+            var nombre= document.getElementById("txtNombre").value;
+            var apellido= document.getElementById("txtApellido").value;
+            var telefono= document.getElementById("txtTelefono").value;
+            var email= document.getElementById("txtEmail").value;
+
+            var persona ={
+                "nombre": nombre,
+                "apellido":apellido,
+                "telefono":telefono,
+                "email":email
+            }
+            personas.push(persona);
+            debugger;
+        }
+        function mostrarPersonas(){
+            var listado=document.getElementById("listado");
+            var html="";
+            for (persona of personas){
+               html += 'nombre : ${persona.nombre};'
+            }
+        }
+
+    </script>
+    
+    <!-- <script>
+        var personas= {
+            "nombre":"emanuel",
+            "apellido":"lemos",
+            "telefono":40399403,
+            "email":"lemos_ema@gmail.com",
+            "direccion":"calle falsa 1234",
+            "empleo":{
+                "lugar":"emergencias",
+                "puesto":"teachnical lead",
+                "localidad":"argentina",
+            }
+        }
+        // console.log(personas);
+        // alert(personas.apellido);
+        // personas.telefono="no tiene";
+        // alert(personas.telefono)
+        // alert(personas.empleo.lugar);
+    </script> -->
+</body>
+</html>
